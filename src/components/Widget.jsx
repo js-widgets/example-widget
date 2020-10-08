@@ -27,7 +27,7 @@ function Widget({ element }) {
         </button>
       </p>
       <p>
-        <img src={logo} alt="Logo" width="100" height="*" />
+        <img src={logo} alt="Logo" width="48" height="*" />
       </p>
     </div>
   );

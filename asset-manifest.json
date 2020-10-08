@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/example-widget/index.html/css/main.css",
-    "main.js": "/example-widget/index.html/js/main.js",
-    "main.js.map": "/example-widget/index.html/js/main.js.map",
-    "css/main.css.map": "/example-widget/index.html/css/main.css.map",
-    "index.html": "/example-widget/index.html/index.html",
-    "js/main.js.LICENSE.txt": "/example-widget/index.html/js/main.js.LICENSE.txt",
-    "precache-manifest.eacc5319c7899598ba0d51829b2cf0cb.js": "/example-widget/index.html/precache-manifest.eacc5319c7899598ba0d51829b2cf0cb.js",
-    "service-worker.js": "/example-widget/index.html/service-worker.js",
-    "static/css/main.f14b62e5.css.map": "/example-widget/index.html/static/css/main.f14b62e5.css.map",
-    "static/media/logo.svg": "/example-widget/index.html/static/media/logo.dd60b11e.svg"
+    "main.css": "https://js-widgets.github.io/example-widget/css/main.css",
+    "main.js": "https://js-widgets.github.io/example-widget/js/main.js",
+    "main.js.map": "https://js-widgets.github.io/example-widget/js/main.js.map",
+    "css/main.css.map": "https://js-widgets.github.io/example-widget/css/main.css.map",
+    "index.html": "https://js-widgets.github.io/example-widget/index.html",
+    "js/main.js.LICENSE.txt": "https://js-widgets.github.io/example-widget/js/main.js.LICENSE.txt",
+    "precache-manifest.e4da592202c7fce20262fdaa77aa178b.js": "https://js-widgets.github.io/example-widget/precache-manifest.e4da592202c7fce20262fdaa77aa178b.js",
+    "service-worker.js": "https://js-widgets.github.io/example-widget/service-worker.js",
+    "static/css/main.f14b62e5.css.map": "https://js-widgets.github.io/example-widget/static/css/main.f14b62e5.css.map",
+    "static/media/logo.svg": "https://js-widgets.github.io/example-widget/static/media/logo.dd60b11e.svg"
   },
   "entrypoints": [
     "static/css/main.f14b62e5.css",

@@ -28,6 +28,7 @@
     "build:locales": "formatjs extract './src/messages.js' --messages-dir './messages' && node './src/core/scripts/build-locales.js' && rm -rvf './messages'",
     "build:gh-pages": "npm run build && gh-pages -d build",
     "test": "craco test",
+    "test:ci": "craco test --watchAll=false",
     "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|md)\"",
     "use-typescript": "node src/core/scripts/use-typescript.js"
   },

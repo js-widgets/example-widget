@@ -26,6 +26,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build
         run: npm run-script build
+        env:
+          PUBLIC_URL: 'https://js-widgets.github.io/example-widget'
       - name: Deploy to GitHub Pages
         if: ${{ success() }}
         uses: crazy-max/ghaction-github-pages@v2

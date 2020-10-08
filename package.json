@@ -6,7 +6,7 @@
     "access": "public"
   },
   "version": "0.1.0",
-  "homepage": "https://pages.github.com/js-widgets/example-widget",
+  "homepage": "https://js-widgets.github.io/example-widget/index.html",
   "dependencies": {
     "@craco/craco": "^5.6.4",
     "@formatjs/cli": "^1.7.5",

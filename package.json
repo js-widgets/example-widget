@@ -1,0 +1,42 @@
+{
+  "name": "@js-widgets/example-widget",
+  "private": false,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.1.0",
+  "homepage": "https://pages.github.com/js-widgets/example-widget",
+  "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "@formatjs/cli": "^1.7.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "eslint-plugin-react": "^7.20.0",
+    "postcss-wrap": "^0.0.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intl": "^4.6.9",
+    "react-intl-translations-manager": "^5.0.3",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build && rm -r ./build/static",
+    "build:locales": "formatjs extract './src/messages.js' --messages-dir './messages' && node './src/core/scripts/build-locales.js' && rm -rvf './messages'",
+    "build:gh-pages": "npm run build && gh-pages -d build",
+    "test": "craco test",
+    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|md)\"",
+    "use-typescript": "node src/core/scripts/use-typescript.js"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
+    "gh-pages": "^3.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.10",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.0.8"
+  }
+}

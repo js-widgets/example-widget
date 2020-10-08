@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 

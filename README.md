@@ -19,6 +19,8 @@ This example contains documentation and example code for creating widgets using 
 6. Install the project dependencies using `npm install`
 7. Run the project locally using `npm start`
 
+**IMPORTANT:** Make sure you check the [widget development documentation](/widget-development.md) when developing your own. 
+
 ### Continuous Integration
 
 Testing and deployment scripts available inside this example repository using [GitHub Actions](https://github.com/features/actions).

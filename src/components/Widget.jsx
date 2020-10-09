@@ -23,7 +23,7 @@ function Widget({ element }) {
       </p>
       <p className="is-size-6 pb-4">
         <button className="button is-primary">
-          {element.getAttribute('data-attr')}
+          {element.getAttribute('data-button-text')}
         </button>
       </p>
       <p>

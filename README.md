@@ -64,7 +64,7 @@ document.loadWidget({
 Within the `<body>` tag add the instanceId div wherever you want this widget to render.
 
 ```html
-<div id="example-widget-1" data-attr="foobar"></div>
+<div id="example-widget-1" data-button-text="foobar"></div>
 ```
 
 - [See an example](https://github.com/js-widgets/example-widget/blob/master/src/public/index.html#L79) of the widget placement implementation.
@@ -85,8 +85,8 @@ document.loadWidgets({
 ```
 
 ```html
-<div id="example-widget-1" data-attr="foo"></div>
-<div id="example-widget-2" data-attr="bar"></div>
+<div id="example-widget-1" data-button-text="foo"></div>
+<div id="example-widget-2" data-button-text="bar"></div>
 ```
 
 #### Parameters
@@ -109,7 +109,7 @@ import React, { Component } from 'react';
 class Widget extends Component {
   render() {
     return (
-      <div className="App">{this.props.obj.getAttribute('data-attr')}</div>
+      <div className="App">{this.props.obj.getAttribute('data-button-text')}</div>
     );
   }
 }
@@ -122,7 +122,7 @@ export default Widget;
 #### DIV attributes
 
 ```html
-<div id="example-widget-1" data-attr="Hello world!"></div>
+<div id="example-widget-1" data-button-text="Hello world!"></div>
 ```
 
 - [See an example](https://github.com/js-widgets/example-widget/blob/master/src/public/index.html#L79) of the widget attribute implementation.
@@ -130,7 +130,7 @@ export default Widget;
 #### Query string values
 
 ```
-http://localhost:3000/?data-attr=Hello%20world!
+http://localhost:3000/?data-button-text=Hello%20world!
 ```
 
 Note: DIV attributes are the preferred method and will always take precedence over the use of query

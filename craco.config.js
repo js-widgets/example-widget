@@ -29,6 +29,11 @@ module.exports = {
       output: {
         filename: 'js/[name].js',
       },
+      externals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        'react-intl': 'ReactIntl',
+      },
     },
   },
 };

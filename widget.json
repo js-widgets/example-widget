@@ -36,5 +36,16 @@
       }
     }
   },
+  "externalPeerDependencies": {
+    "react": {
+      "src": "https://unpkg.com/react@^17/umd/react.production.min.js"
+    },
+    "react-dom": {
+      "src": "https://unpkg.com/react-dom@^17/umd/react-dom.production.min.js"
+    },
+    "react-intl": {
+      "src": "https://unpkg.com/react-intl-bundle@^1/dist/react-intl.production.min.js"
+    }
+  },
   "title": "Example Widget"
 }

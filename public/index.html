@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A widget example!</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react-intl-bundle@1.0.0/dist/react-intl.production.min.js"></script>
 </head>
 <body>
 <section class="section">
@@ -77,6 +80,7 @@
         console.debug("The widget has finished rendering: ", domElement),
       origin: "https://js-widgets.github.io",
       renderFunctionName: "renderExampleWidget",
+      language: "es",
     },
   ]);
 </script>

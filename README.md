@@ -19,7 +19,7 @@ This example contains documentation and example code for creating widgets using 
 6. Install the project dependencies using `npm install`
 7. Run the project locally using `npm start`
 
-**IMPORTANT:** Make sure you check the [widget development documentation](/widget-development.md) when developing your own. 
+**IMPORTANT:** Make sure you check the [widget development documentation](/widget-development.md) when developing your own.
 
 ### Continuous Integration
 
@@ -94,7 +94,7 @@ document.loadWidgets({
 #### Parameters
 
 | Name               | Required | Default                  | Example                 | Description                                                               |
-| ------------------ | -------- | ------------------------ | ------------------------| ------------------------------------------------------------------------- |
+| ------------------ | -------- | ------------------------ | ----------------------- | ------------------------------------------------------------------------- |
 | renderFunctionName | yes      |                          | `renderExampleWidget`   | The render function callback.                                             |
 | instanceId         | yes      |                          | `example-widget-1`      | The already present HTML element ID where the react app will be rendered. |
 | language           | no       | en-us                    | de                      | The language code for internationalization purposes.                      |
@@ -111,7 +111,9 @@ import React, { Component } from 'react';
 class Widget extends Component {
   render() {
     return (
-      <div className="App">{this.props.obj.getAttribute('data-button-text')}</div>
+      <div className="App">
+        {this.props.obj.getAttribute('data-button-text')}
+      </div>
     );
   }
 }

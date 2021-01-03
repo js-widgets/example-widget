@@ -4,8 +4,8 @@ In this page, technical requirements to create widgets compatible with the regis
 
 All widgets need to include a `package.json` file which provides the following two commands:
 
-* `npm install` to install dependencies, libraries or any other components needed by the widget.
-* `PUBLIC_URL='<some url>' npm run build` to build a production compilation of the widget. The `PUBLIC_URL` parameter will be discussed later.
+- `npm install` to install dependencies, libraries or any other components needed by the widget.
+- `PUBLIC_URL='<some url>' npm run build` to build a production compilation of the widget. The `PUBLIC_URL` parameter will be discussed later.
 
 ### Directory structure
 

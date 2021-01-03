@@ -28,9 +28,7 @@
             "type": "string",
             "title": "Button text",
             "description": "Some random string to be displayed when the widget is rendered.",
-            "examples": [
-              "foobar"
-            ]
+            "examples": ["I am a button", "Please, click me", "CLICK"]
           }
         }
       }

@@ -110,11 +110,7 @@ import React, { Component } from 'react';
 
 class Widget extends Component {
   render() {
-    return (
-      <div className="App">
-        {this.props.obj.getAttribute('data-button-text')}
-      </div>
-    );
+    return <div className="App">{this.props.obj.getAttribute('data-button-text')}</div>;
   }
 }
 

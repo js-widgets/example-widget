@@ -1,0 +1,6 @@
+/coverage
+/node_modules
+/build
+/dist
+/src/core/bin/serviceWorker.js
+/src/core/scripts/use-typescript.js

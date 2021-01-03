@@ -55,9 +55,7 @@ Object.keys(locales).forEach(function (key) {
         typeof translation.messages[id] !== 'string' ||
         translation.messages[id] === source.messages[id]
       ) {
-        throw new Error(
-          'Invalid translation, ' + locales[key] + '(' + key + ')',
-        );
+        throw new Error('Invalid translation, ' + locales[key] + '(' + key + ')');
       }
     }
   } catch (error) {

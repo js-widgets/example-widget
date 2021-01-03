@@ -1,21 +1,24 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
-  parser: 'babel-eslint',
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+  ],
+  env: {
+    es2021: true,
+    node: true,
+    browser: true,
+  },
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 12,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
-  env: {
-    browser: true,
-    es6: true,
-    jest: true,
-    node: true,
-  },
   rules: {
-    'no-console': 'off',
+    'no-unused-vars': ['warn', { args: 'none', argsIgnorePattern: 'req|res|next|val' }],
+    'prettier/prettier': ['error'],
   },
   settings: {
     react: {

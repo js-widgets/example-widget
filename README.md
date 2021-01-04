@@ -21,6 +21,88 @@ This example contains documentation and example code for creating widgets using 
 
 **IMPORTANT:** Make sure you check the [widget development documentation](/widget-development.md) when developing your own.
 
+## `widget.json`
+
+There is a special file called `widget.json` in the root of the widget. Widget registries, [like this
+example](https://github.com/js-widgets/widget-registry-boilerplate), need this file to learn about
+this widget. It contains the following keys:
+
+| Name                     | Required | Example                                | Description                                                                                    |
+| ------------------------ | -------- | -------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| shortcode                | yes      | product-catalog                        | The machine name identifier for the widget.                                                    |
+| description              | no       | A catalog of products for our company. | A longer description for the widget. This is shown in the widget catalog.                      |
+| availableTranslations    | yes      | `['en', 'es']`                         | Language codes this widget is available in for internationalization purposes.                  |
+| settingsSchema           | no       |                                        | A JSON Schema object decribing the input parameters for the widgets at embed time.             |
+| externalPeerDependencies | no       |                                        | List of runtime dependencies for this widget that embedders need to add along with the widget. |
+| status                   | yes      | stable                                 | One of `stable`, `beta`, `wip`, or `deprecated`.                                               |
+
+### Configurable widgets
+Configuration parameters are specified during the embed process. Drupal will create a form element
+automatically to gather those parameters in the editorial screens. For the CMS to know what form
+element to use, the widget definition needs to include a [JSON Schema](https://json-schema.org)
+definition for every parameter.
+
+This repository contains an example of a configurable parameter. In this case it's the text of the
+button. This is [described in `widget.json`](https://github.com/js-widgets/example-widget/blob/master/widget.json#L20-L36) as:
+
+```json
+  "settingsSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "fields": {
+        "type": "object",
+        "properties": {
+          "button-text": {
+            "type": "string",
+            "title": "Button text",
+            "description": "Some random string to be displayed when the widget is rendered.",
+            "examples": ["I am a button", "Please, click me", "CLICK"]
+          }
+        }
+      }
+    }
+  },
+```
+
+And then accessed in the [widget code `Widget.jsx`](https://github.com/js-widgets/example-widget/blob/master/src/components/Widget.jsx#L25):
+
+```jsx
+<p className="is-size-6 pb-4">
+  <button className="button is-primary">{element.getAttribute('data-button-text')}</button>
+</p>
+```
+
+Note that since the field name is `button-text`, the value is accessed as `'data-button-text'`.
+
+### External dependencies
+
+`externalPeerDependencies` is a tool designed to share JS dependencies across different widgets.
+This module provides an example how to avoid bundling `react`, `react-dom`, and `react-intl` with
+the widget's JS, while making Drupal (or any other available integrations) load the dependencies
+automatically.
+
+For each dependency you will need to:
+
+1. [Tell Webpack to not include the library](https://github.com/js-widgets/example-widget/blob/master/craco.config.js#L32-L35) in the resulting JS file(s) for this widget.
+```js
+    // webpack.config.js or craco.config.js
+    externals: {
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        'react-intl': 'ReactIntl',
+    },
+    // ...
+```
+1. [Tell the widget registry (in `widget.json`)](https://github.com/js-widgets/example-widget/blob/master/widget.json#L37-L46), and ultimately the CMS integrations where to find these libraries that were excluded.
+```json
+"externalPeerDependencies": {
+    "react": {"src": "https://unpkg.com/react@^17/umd/react.production.min.js"},
+    "react-dom": {"src": "https://unpkg.com/react-dom@^17/umd/react-dom.production.min.js"},
+    "react-intl": {"src": "https://unpkg.com/react-intl-bundle@^1/dist/react-intl.production.min.js"}
+},
+```
+
 ### Continuous Integration
 
 Testing and deployment scripts available inside this example repository using [GitHub Actions](https://github.com/features/actions).
@@ -97,7 +179,7 @@ document.loadWidgets({
 | ------------------ | -------- | ------------------------ | ----------------------- | ------------------------------------------------------------------------- |
 | renderFunctionName | yes      |                          | `renderExampleWidget`   | The render function callback.                                             |
 | instanceId         | yes      |                          | `example-widget-1`      | The already present HTML element ID where the react app will be rendered. |
-| language           | no       | en-us                    | de                      | The language code for internationalization purposes.                      |
+| language           | no       | en                       | de                      | The language code for internationalization purposes.                      |
 | origin             | no       | `window.location.origin` | https://www.example.org | Protocol and hostname where a JSONAPI endpoint is available.              |
 | onRenderFinish     | no       |                          |                         | A callback that executes after the widget has been rendered.              |
 
@@ -157,7 +239,7 @@ Create all translation messages in `src/messages.js`, following the provided exa
 | German                 | de    |
 | English                | en    |
 | Spanish                | es    |
-| Latin American Spanish | es-la |
+| Latin American Spanish | esla  |
 | French                 | fr    |
 | Italian                | it    |
 | Japanese               | ja    |

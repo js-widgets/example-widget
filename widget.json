@@ -45,5 +45,6 @@
       "src": "https://unpkg.com/react-intl-bundle@^1/dist/react-intl.production.min.js"
     }
   },
-  "title": "Example Widget"
+  "title": "Example Widget",
+  "status": "stable"
 }

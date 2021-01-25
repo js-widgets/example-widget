@@ -1,3 +1,3 @@
 module.exports = {
-  plugins: [require('postcss-wrap')({ selector: '.example-widget' })],
+  plugins: [require('postcss-wrap')({ selector: '.widget-instance' })],
 };

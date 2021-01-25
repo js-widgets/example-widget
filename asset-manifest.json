@@ -6,10 +6,10 @@
     "css/main.css.map": "https://js-widgets.github.io/example-widget/css/main.css.map",
     "index.html": "https://js-widgets.github.io/example-widget/index.html",
     "js/main.js.LICENSE.txt": "https://js-widgets.github.io/example-widget/js/main.js.LICENSE.txt",
-    "static/css/main.91ee73ca.css.map": "https://js-widgets.github.io/example-widget/static/css/main.91ee73ca.css.map"
+    "static/css/main.8343b28c.css.map": "https://js-widgets.github.io/example-widget/static/css/main.8343b28c.css.map"
   },
   "entrypoints": [
-    "static/css/main.91ee73ca.css",
+    "static/css/main.8343b28c.css",
     "css/main.css",
     "js/main.js"
   ]

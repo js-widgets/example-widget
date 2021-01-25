@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install package dependencies
-        run: npm ci && npx lerna bootstrap
+        run: npm ci
       - name: Run Linter
         run: npm run lint
       - run: npm test

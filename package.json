@@ -44,4 +44,5 @@
     "semantic-release": "^17.0.8",
     "webpack": "^4.44.2"
   }
+  "version": "1.0.6"
 }
